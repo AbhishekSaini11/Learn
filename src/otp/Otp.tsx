@@ -15,7 +15,21 @@ const otref4=useRef<any>();
     const[otp2,setOtp2]=useState("")
     const[otp3,setOtp3]=useState("")
     const[otp4,setOtp4]=useState("")
-    const [num,setNum]=useState(60)
+   
+    const [timerCount, setTimer] = useState(30)
+    
+useEffect(() => {
+  let interval = setInterval(() => {
+    setTimer(lastTimerCount => {
+        lastTimerCount <= 1 && clearInterval(interval)
+        return lastTimerCount-1
+        
+
+    })
+  }, 1000) //each count lasts for a second
+  //cleanup the interval on complete
+  return () => clearInterval(interval)
+}, []);
 
   
   return (
@@ -61,7 +75,12 @@ const otref4=useRef<any>();
         
         
       </View>
-   
+      <View style={{flexDirection:'row',marginRight:-150}}>
+      <Text>{timerCount} </Text>
+      <TouchableOpacity onPress={()=>setTimer(30)}>
+      <Text style={{color:timerCount==0?"red":"blue"}}>Resend Otp</Text>
+      </TouchableOpacity>
+      </View>
 <TouchableOpacity
 disabled={
   otp!==""&& 

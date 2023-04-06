@@ -8,11 +8,39 @@ const cartslice = createSlice({
             state.push(action.payload);
         },
         removeCartItem(state, action) {
-            return state.filter((item, index) => index !== action.payload);
+            return state.filter((item: any, index: any) => index !== action.payload);
         },
-    },
+        addNweProduct1(state, action) {
+            let myindex = -1
+            state.map((item, index) => {
+                if (item.id == action.payload) {
+                    myindex = index;
+                }
 
+            });
+            if(myindex==-1){
+
+            }else{
+                state[myindex].qty = state[myindex].qty + 1;
+            }
+    },
+    removeCartWithMinus2(state, action) {
+       
+        let myindex = -1
+        state.map((item, index) => {
+            if (item.id == action.payload) {
+                myindex = index;
+            }
+
+        });
+        if(myindex==-1){
+
+        }else{
+            state[myindex].qty = state[myindex].qty -1;
+        }
+    }
+    }
 
 });
-export const { addCartItem, removeCartItem }=cartslice.actions;
+export const { addCartItem, removeCartItem,addNweProduct1,removeCartWithMinus2 }=cartslice.actions;
 export default cartslice.reducer;

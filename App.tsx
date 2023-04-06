@@ -5,11 +5,12 @@ import PRODUCT from './src/product/Product';
 import Route from './src/navigation/Route';
 import { Provider } from 'react-redux';
 import mystore from './src/reduxtoolkit/mystore';
+import Main from './src/navigation/Main';
 
 const App = () => {
   return (
     <Provider store={mystore}>
-  <Route/>
+  <Main/>
   </Provider>
   );
 }

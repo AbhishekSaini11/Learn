@@ -6,7 +6,7 @@ const newSlice = createSlice({
     reducers: {
         addNweProduct(state, action) {
             let myindex = -1
-            state.map((item, index) => {
+            state.map((item:any, index:any) => {
                 if (item.id == action.payload.id) {
                     myindex = index;
                 }

@@ -5,6 +5,7 @@ import { View, Text } from 'react-native';
 import PRODUCT from '../product/Product';
 import Otp from '../otp/Otp';
 import Cart from '../product/Cart';
+import calender from '../calender/calender';
 
 
 const Route = () => {
@@ -12,6 +13,7 @@ const Route = () => {
   return (
   <NavigationContainer>
 <Stack.Navigator >
+<Stack.Screen name='calender' component={calender} options={{headerShown:false}}/>
 <Stack.Screen name='product' component={PRODUCT} options={{headerShown:false}}/>
 <Stack.Screen name='Cart' component={Cart}/>
    

@@ -10,8 +10,8 @@ import Main from './src/navigation/Main';
 const App = () => {
   return (
     <Provider store={mystore}>
-  <Main/>
-  </Provider>
+      <Main />
+    </Provider>
   );
 }
 

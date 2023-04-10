@@ -12,7 +12,7 @@ const cartslice = createSlice({
         },
         addNweProduct1(state, action) {
             let myindex = -1
-            state.map((item, index) => {
+            state.map((item:any, index:any) => {
                 if (item.id == action.payload) {
                     myindex = index;
                 }
@@ -27,7 +27,7 @@ const cartslice = createSlice({
     removeCartWithMinus2(state, action) {
        
         let myindex = -1
-        state.map((item, index) => {
+        state.map((item:any, index:any) => {
             if (item.id == action.payload) {
                 myindex = index;
             }

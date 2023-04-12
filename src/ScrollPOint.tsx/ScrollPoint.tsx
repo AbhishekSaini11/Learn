@@ -6,6 +6,7 @@ const ScrollPoint = () => {
    const data1=[1,2,3,4,5,6,7,8]
    const data2=[1,,2,3,4,5,6,7,8,9,10,11]
    const [currantIndex, setCurrantIndex] = useState<any>(0);
+   const [s,setS]=useState(0)
   return (
     <View  >
         <ScrollView>
@@ -75,9 +76,17 @@ renderItem={({item,index})=>{
      
         return(
            
-            <View style={{backgroundColor:'green',height:70,width:350,margin:20,borderRadius:20,alignSelf:'center',justifyContent:'center',marginHorizontal:10}}>
-                <View style={{backgroundColor:'#FFF',height:100,width:100,borderRadius:50,justifyContent:'center',marginLeft:-10,borderColor:'green',borderRightColor:"red",borderWidth:2}}></View>
+            <View style={{backgroundColor:'#1DB4CF',height:50,width:350,marginVertical:30,borderRadius:20,alignSelf:'center',justifyContent:'space-between',marginHorizontal:10,flexDirection:'row',alignItems:'center'}}>
+                <View style={{backgroundColor:'#FFF',height:100,width:100,borderRadius:50,justifyContent:'center',marginLeft:-10,borderColor:'#1DB4CF',borderRightColor:"red",borderWidth:2}}></View>
+                   <View style={{height:30,width:60,borderWidth:2,borderRadius:100,borderColor:"#EB25E9",flexDirection:"row",backgroundColor:'#FFF',alignItems:'center',justifyContent:'space-evenly',right:12}}>
+                      <TouchableOpacity onPress={()=>setS(0)}>
+                        <View style={{height:20,width:28,borderRadius:50,backgroundColor:s==0?"#EB25E9":null,left:3}}></View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=>setS(1)}>
+                        <View style={{height:20,width:28,borderRadius:50,backgroundColor:s==1?"#EB25E9":null}}></View>
+                        </TouchableOpacity>
 
+                   </View>
                 </View>
               
         )
